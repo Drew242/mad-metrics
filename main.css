@@ -21,7 +21,8 @@ body {
 }
 
 #metric-madness:hover {
-  background-color: rgb(0, 0, 105);
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 #metric-madness:active {
@@ -43,11 +44,14 @@ body {
   display: inline-block;
   min-width: 20%;
   max-width: 40%;
+  padding-left: 5%;
 }
 
 #history {
   min-height: 10%;
   display: inline-block;
+  vertical-align: top;
+  padding-left: 3%;
   min-width: 20%;
   max-width: 40%;
 }
@@ -65,6 +69,7 @@ body {
 #day {
   min-height: 10%;
   max-width: 60%;
+  padding-left: 5%;
 }
 
 #community {
@@ -75,6 +80,7 @@ body {
 
 #boulder {
   min-height: 10%;
+  padding-left: 5%;
 }
 
 .boulder-img {
@@ -85,6 +91,7 @@ body {
 
 #resources {
   min-height: 10%;
+  padding-left: 5%;
 }
 
 .resource-img {
@@ -94,6 +101,7 @@ body {
 #additional {
   min-height: 10%;
   max-width: 80%;
+  padding-left: 5%;
 }
 
 #signup {
@@ -153,4 +161,29 @@ body {
 
 #footer {
   min-height: 10%;
+}
+
+@media (max-width: 1000px) {
+  #about {
+    display: block;
+    padding-left: 5%;
+    margin: 0 auto;
+  }
+
+  #history {
+    display: block;
+    padding-left: 5%;
+    margin: 0 auto;
+  }
+
+  #boulder {
+    text-align: center;
+  }
+
+  .boulder-img {
+    display: block;
+    max-width: 60%;
+    padding-top: 5%;
+    margin: 0 auto;
+  }
 }
