@@ -61,17 +61,6 @@ body {
     to {top:0; opacity:1}
 }
 
-.bubbleChart {
-      min-width: 60%;
-      max-width: 90%;;
-      height: 80%;
-      margin: 0 auto;
-}
-
-.bubbleChart svg{
-    background: #000000;
-}
-
 .close {
     color: #aaa;
     float: right;
