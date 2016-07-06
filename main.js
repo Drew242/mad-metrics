@@ -1,9 +1,13 @@
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("metric-madness");
-var span = document.getElementsByClassName("close")[0];
+var modal      = document.getElementById('myModal');
+var btn        = document.getElementById("metric-madness");
+var span       = document.getElementsByClassName("close")[0];
+var startTime  = new Date();
+
 
 btn.onclick = function() {
     modal.style.display = "block";
+    var lapsedTime = new Date() - startTime;
+    document.getElementById("lapsedTime").innerHTML = "Minutes on site: " + (lapsedTime / 6000);
 }
 
 span.onclick = function() {
