@@ -1,5 +1,7 @@
 body {
   font-family: fantasy, 'Courier New';
+  margin: 0;
+  padding: 0;
 }
 
 #metric-madness {
@@ -152,6 +154,7 @@ body {
 
 #signup {
   min-height: 10%;
+  padding-left: 5%; 
 }
 
 .required-header {
