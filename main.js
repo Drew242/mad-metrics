@@ -3,16 +3,16 @@ var modal         = document.getElementById('myModal');
 var btn           = document.getElementById("metric-madness");
 var span          = document.getElementsByClassName("close")[0];
 var divTime       = document.getElementsByTagName("div");
-var welcomeDiv    = [];
-var aboutDiv      = [];
-var historyDiv    = [];
-var studentDiv    = [];
-var dayDiv        = [];
-var communityDiv  = [];
-var boulderDiv    = [];
-var resourcesDiv  = [];
-var additionalDiv = [];
-var signupDiv     = [];
+var welcomeDiv    = [0];
+var aboutDiv      = [0];
+var historyDiv    = [0];
+var studentsDiv   = [0];
+var dayDiv        = [0];
+var communityDiv  = [0];
+var boulderDiv    = [0];
+var resourcesDiv  = [0];
+var additionalDiv = [0];
+var signupDiv     = [0];
 
 for (i = 0; i < divTime.length; i++) {
   divTime[i].addEventListener("mouseenter", function() {
@@ -23,10 +23,10 @@ for (i = 0; i < divTime.length; i++) {
 
 for (i = 0; i < divTime.length; i++) {
   divTime[i].addEventListener("mouseleave", function() {
-    var endTime  = totalSeconds;
-    hoverTime    = (endTime - startTime);
-    var location = this.id + "Div";
-    aboutDiv.push(hoverTime);
+    var endTime     = totalSeconds;
+    hoverTime       = (endTime - startTime);
+    var divLocation = this.id + "Div";
+    window[divLocation].push(hoverTime);
   })
 }
 
@@ -52,7 +52,16 @@ btn.onclick = function() {
     document.getElementById("distanceScrolled").innerHTML = "Distance Scrolled: " + 42 + "px";
     document.getElementById("percOfPage").innerHTML = "Percentage of Page Scrolled: " + (42 / 6) + "%";
     document.getElementById("timeB4SignUp").innerHTML = "Time before clicking signup: " + (totalSeconds / 7).toFixed(2) + " seconds";
+    document.getElementById("welcomeDiv").innerHTML = "Seconds spent on Welcome: " + timeSum(welcomeDiv);
     document.getElementById("aboutDiv").innerHTML = "Seconds spent on About: " + timeSum(aboutDiv);
+    document.getElementById("historyDiv").innerHTML = "Seconds spent on History: " + timeSum(historyDiv);
+    document.getElementById("studentsDiv").innerHTML = "Seconds spent on Student: " + timeSum(studentsDiv);
+    document.getElementById("dayDiv").innerHTML = "Seconds spent on Day: " + timeSum(dayDiv);
+    document.getElementById("communityDiv").innerHTML = "Seconds spent on Community: " + timeSum(communityDiv);
+    document.getElementById("boulderDiv").innerHTML = "Seconds spent on Boulder: " + timeSum(boulderDiv);
+    document.getElementById("resourcesDiv").innerHTML = "Seconds spent on Resources: " + timeSum(resourcesDiv);
+    document.getElementById("additionalDiv").innerHTML = "Seconds spent on Additional: " + timeSum(additionalDiv);
+    document.getElementById("signupDiv").innerHTML = "Seconds spent on Signup: " + timeSum(signupDiv);
 }
 
 
