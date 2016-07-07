@@ -71,7 +71,7 @@ signup.onclick = function() {
 
 btn.onclick = function() {
     modal.style.display = "block";
-    document.getElementById("timeOnSite").innerHTML = "Seconds on site: " + (totalSeconds);
+    document.getElementById("timeOnSite").innerHTML = "Minutes on site: " + ((totalSeconds) / 60).toFixed(2);
     document.getElementById("distanceScrolled").innerHTML = "Distance Scrolled: " + ((verticalPixel === 460) ? "Less than 500" : verticalPixel) + " pixels";
     document.getElementById("percOfPage").innerHTML = "Percentage of Page Scrolled: " + (((verticalPixel * horizontalPix) / pageArea) * 100).toFixed(2) + "%";
     document.getElementById("timeB4SignUp").innerHTML = "Time before clicking signup: " + signupStop + ((typeof(signupStop) === "number") ? " seconds" : " sorry");
@@ -90,12 +90,16 @@ btn.onclick = function() {
 
 
 span.onclick = function() {
+    var parent = document.getElementById("pie");
+    var child  = document.getElementsByTagName("svg")[0];
+    parent.removeChild(child);
     modal.style.display = "none";
 }
 
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        d3.select("#pie").remove("svg");
     }
 }
 
