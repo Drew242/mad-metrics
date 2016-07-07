@@ -53,8 +53,27 @@ body {
   animation-duration: 1.4s
 }
 
-.modal-heading {
+#modal-heading {
   text-align: center;
+}
+
+#overall {
+  border: 1px solid black;
+  padding: 3%;
+}
+
+.pieChart {
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+}
+
+svg {
+  margin-top: 5%;
+}
+
+li {
+  list-style: none;
 }
 
 @-webkit-keyframes animatetop {
