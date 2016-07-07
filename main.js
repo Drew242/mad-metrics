@@ -2,6 +2,7 @@ window.addEventListener("scroll", vertPixels);
 window.onload     = timer;
 var modal         = document.getElementById('myModal');
 var btn           = document.getElementById("metric-madness");
+var signup        = document.getElementById('signup-btn');
 var span          = document.getElementsByClassName("close")[0];
 var divTime       = document.getElementsByTagName("div");
 var welcomeDiv    = [0];
@@ -19,6 +20,7 @@ var bodyHeight    = document.body.clientHeight;
 var pageArea      = bodyWidth * bodyHeight;
 var horizontalPix = bodyWidth;
 var verticalPixel = 460;
+var signupStop    = "Never signed up...";
 
 function vertPixels() {
   var element       = document.getElementsByTagName("body")[0];
@@ -60,12 +62,21 @@ function timeSum(divName) {
   return totalDivSeconds;
 }
 
+signup.onclick = function() {
+  console.log('boom');
+  signupStop = totalSeconds;
+  console.log('shackalacka');
+  document.getElementById("notice-success").innerHTML = "Information Received";
+  document.getElementById("notice-success").style.padding = "1%";
+  return signupStop;
+}
+
 btn.onclick = function() {
     modal.style.display = "block";
     document.getElementById("timeOnSite").innerHTML = "Seconds on site: " + (totalSeconds);
     document.getElementById("distanceScrolled").innerHTML = "Distance Scrolled: " + 42 + "px";
     document.getElementById("percOfPage").innerHTML = "Percentage of Page Scrolled: " + (((verticalPixel * horizontalPix) / pageArea) * 100).toFixed(2) + "%";
-    document.getElementById("timeB4SignUp").innerHTML = "Time before clicking signup: " + (totalSeconds / 7).toFixed(2) + " seconds";
+    document.getElementById("timeB4SignUp").innerHTML = "Time before clicking signup: " + signupStop + ((typeof(signupStop) === "number") ? " seconds" : " sorry");
     document.getElementById("welcomeDiv").innerHTML = "Seconds spent on Welcome: " + timeSum(welcomeDiv);
     document.getElementById("aboutDiv").innerHTML = "Seconds spent on About: " + timeSum(aboutDiv);
     document.getElementById("historyDiv").innerHTML = "Seconds spent on History: " + timeSum(historyDiv);

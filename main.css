@@ -53,6 +53,10 @@ body {
   animation-duration: 1.4s
 }
 
+.modal-heading {
+  text-align: center;
+}
+
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
@@ -154,10 +158,15 @@ body {
 
 #signup {
   min-height: 10%;
-  padding-left: 5%; 
+  padding-left: 5%;
 }
 
 .required-header {
+  margin-left: 60%;
+}
+
+#notice-success {
+  background-color: green;
   margin-left: 60%;
 }
 

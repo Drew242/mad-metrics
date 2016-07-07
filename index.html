@@ -15,7 +15,7 @@
 
       <div class="modal-content">
         <span class="close">x</span>
-        <h2>Breakdown of Visit</h2>
+        <h2 id="modal-heading">Breakdown of Visit</h2>
         <h2 id="timeOnSite"></h2>
         <h4 id="distanceScrolled"></h4>
         <h4 id="percOfPage"></h4>
@@ -85,13 +85,14 @@
       <h2>Sign Up</h2>
       <form class="signup-valid">
           <h3 class="required-header">All fields required</h3>
+          <span id="notice-success"></span>
           <label class="form-label" for="fname">First Name</label>
           <input class="text-input" type="text" id="fname" name="fname" placeholder="John" required>
           <label class="form-label" for="lname">Last Name</label>
           <input class="text-input" type="text" id="lname" name="lname" placeholder="Doe" required>
           <label class="form-label" for="email">Email</label>
           <input class="text-input" type="email" id="email" name="email" placeholder="JDoe@hotmail.com" required>
-          <input class="button" type="submit" value="Submit">
+          <input id="signup-btn" class="button" type="button" value="Submit">
       </form>
     </div>
     <div id='footer'>
