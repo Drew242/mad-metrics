@@ -63,9 +63,7 @@ function timeSum(divName) {
 }
 
 signup.onclick = function() {
-  console.log('boom');
   signupStop = totalSeconds;
-  console.log('shackalacka');
   document.getElementById("notice-success").innerHTML = "Information Received";
   document.getElementById("notice-success").style.padding = "1%";
   return signupStop;
@@ -74,7 +72,7 @@ signup.onclick = function() {
 btn.onclick = function() {
     modal.style.display = "block";
     document.getElementById("timeOnSite").innerHTML = "Seconds on site: " + (totalSeconds);
-    document.getElementById("distanceScrolled").innerHTML = "Distance Scrolled: " + 42 + "px";
+    document.getElementById("distanceScrolled").innerHTML = "Distance Scrolled: " + ((verticalPixel === 460) ? "Less than 500" : verticalPixel) + " pixels";
     document.getElementById("percOfPage").innerHTML = "Percentage of Page Scrolled: " + (((verticalPixel * horizontalPix) / pageArea) * 100).toFixed(2) + "%";
     document.getElementById("timeB4SignUp").innerHTML = "Time before clicking signup: " + signupStop + ((typeof(signupStop) === "number") ? " seconds" : " sorry");
     document.getElementById("welcomeDiv").innerHTML = "Seconds spent on Welcome: " + timeSum(welcomeDiv);
